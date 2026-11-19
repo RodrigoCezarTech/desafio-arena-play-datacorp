@@ -178,4 +178,34 @@ A partir dessa referência, foi desenvolvida uma implementação própria do **A
 
 ---
 
+## 🏅 Certificação e Conquista
+
+### Desafio ArenaPlay Sports — Análise de Dados + Scrum
+
+Simulação prática de um ambiente corporativo na empresa fictícia **ArenaPlay Sports Gestão & Scout**, envolvendo análise de dados, metodologias ágeis e desenvolvimento de soluções para o mercado esportivo.
+
+**Atividades realizadas:**
+
+- Briefing e planejamento utilizando metodologia Scrum.
+- Limpeza e análise de dados.
+- Construção e interpretação de KPIs.
+- Resolução de 10 desafios de análise de dados.
+- Identificação de insights estratégicos.
+- Elaboração de relatório executivo para a diretoria.
+
+**Detalhes da atividade:**
+
+| Informação | Detalhe |
+|---|---|
+| Instituição | Generation |
+| Professor orientador | Luiz Chiavini |
+| Duração | 3 horas |
+| Pontuação | 480 XP |
+| Nível alcançado | Cientista de Dados |
+| Código de verificação | `DC-1DHQW8H` |
+
+**Competências desenvolvidas:** Análise de Dados, Scrum, Data Analytics, Excel, SQL e gestão de projetos.
+
+---
+
 ⭐ Se este projeto foi útil ou interessante, considere deixar uma estrela no repositório!
