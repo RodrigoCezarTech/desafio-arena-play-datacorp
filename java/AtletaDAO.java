@@ -1,10 +1,14 @@
+?variant="document" id="62841"}
+```java
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AtletaDAO {
 
-    // Conexão com o banco de dados
     private Connection conn;
 
     // Construtor
@@ -12,7 +16,7 @@ public class AtletaDAO {
         this.conn = conn;
     }
 
-    // Cadastrar atleta no banco de dados
+    // CREATE: cadastrar atleta
     public void cadastrarAtleta(Atleta atleta) throws SQLException {
 
         String sql = "INSERT INTO atletas "
@@ -30,11 +34,11 @@ public class AtletaDAO {
             pstmt.executeUpdate();
         }
     }
- // Listar todos os atletas
+
+    // READ: listar elenco
     public List<Atleta> listarElenco() throws SQLException {
 
         List<Atleta> elenco = new ArrayList<>();
-
         String sql = "SELECT * FROM atletas";
 
         try (PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -57,4 +61,36 @@ public class AtletaDAO {
 
         return elenco;
     }
+
+    // UPDATE: atualizar salário e status
+    public void atualizarSalarioEStatus(
+            int id, double novoSalario, String novoStatus) throws SQLException {
+
+        String sql = "UPDATE atletas SET salario = ?, status = ? WHERE id = ?";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setDouble(1, novoSalario);
+            pstmt.setString(2, novoStatus);
+            pstmt.setInt(3, id);
+
+            pstmt.executeUpdate();
+        }
+    }
+
+    // DELETE: dispensar atleta
+    public boolean dispensarAtleta(int id) throws SQLException {
+
+        String sql = "DELETE FROM atletas WHERE id = ?";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, id);
+
+            int linhas = pstmt.executeUpdate();
+
+            return linhas > 0;
+        }
+    }
 }
+```
