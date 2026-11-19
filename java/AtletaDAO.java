@@ -30,4 +30,31 @@ public class AtletaDAO {
             pstmt.executeUpdate();
         }
     }
+ // Listar todos os atletas
+    public List<Atleta> listarElenco() throws SQLException {
+
+        List<Atleta> elenco = new ArrayList<>();
+
+        String sql = "SELECT * FROM atletas";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+
+                Atleta a = new Atleta(
+                    rs.getInt("id"),
+                    rs.getString("nome"),
+                    rs.getString("posicao"),
+                    rs.getInt("idade"),
+                    rs.getDouble("salario"),
+                    rs.getString("status")
+                );
+
+                elenco.add(a);
+            }
+        }
+
+        return elenco;
+    }
 }
