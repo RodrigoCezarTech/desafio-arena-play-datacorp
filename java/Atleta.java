@@ -1,3 +1,4 @@
+```java
 public class Atleta {
 
     // Atributos privados
@@ -9,7 +10,9 @@ public class Atleta {
     private String status;
 
     // Construtor completo
-    public Atleta(int id, String nome, String posicao, int idade, double salario, String status) {
+    public Atleta(int id, String nome, String posicao,
+                  int idade, double salario, String status) {
+
         this.id = id;
         this.nome = nome;
         this.posicao = posicao;
@@ -43,3 +46,4 @@ public class Atleta {
         return status;
     }
 }
+```
